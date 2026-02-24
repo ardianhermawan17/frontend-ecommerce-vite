@@ -25,7 +25,18 @@
     "noUncheckedSideEffectImports": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@app/*": [
+        "./src/app/*"
+      ],
+      "@shared/*": [
+        "./src/shared/*"
+      ],
+      "@feature/*": [
+        "./src/features/*"
+      ],
+      "@public/*": [
+        "./public/*"
+      ]
     }
   },
   "include": ["src"]
