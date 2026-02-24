@@ -17,10 +17,10 @@ const Index = () => {
                     </CardHeader>
 
                     <CardContent className="mt-4 flex gap-3">
-                        <Link to="/promotion">
+                        <Link to="/e-commerce/promotion">
                             <Button variant="default">Promotion</Button>
                         </Link>
-                        <Link to="/product">
+                        <Link to="/e-commerce/product">
                             <Button variant="outline">E-commerce</Button>
                         </Link>
                     </CardContent>

@@ -2,6 +2,8 @@
 
 import React from "react"
 import { ThemeProvider } from "@shared/providers/theme-provider"
+import {TooltipProvider} from "@shared/components/ui/tooltip.tsx";
+import {Toaster} from "@shared/components/ui/sonner.tsx";
 
 export const ShadcnProvider = ({
     children
@@ -9,8 +11,11 @@ export const ShadcnProvider = ({
     children: React.ReactNode
 }) => {
     return (
-        <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
-            {children}
+        <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+            <TooltipProvider>
+                {children}
+            </TooltipProvider>
+            <Toaster/>
         </ThemeProvider>
     )
 }

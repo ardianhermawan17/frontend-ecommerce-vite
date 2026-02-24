@@ -5,7 +5,8 @@ import Index from '@app/index.tsx'
 import RootLayout from "@app/layout.tsx";
 import ECommerceLayout from "@app/e-commerce/layout.tsx";
 // Lazy pages
-const RecoilSmoke = lazy(() => import('@app/recoil-smoke/page.tsx'));
+const ProductPage = lazy(() => import('@app/e-commerce/product'));
+const CartPage = lazy(() => import('@app/e-commerce/cart'));
 
 
 const router = createBrowserRouter([
@@ -15,23 +16,25 @@ const router = createBrowserRouter([
         children: [
             { index: true, element: <Index /> },
             {
-                path: 'recoil-smoke',
-                element: (
-                    <Suspense fallback={<div>Loading page...</div>}>
-                        <RecoilSmoke />
-                    </Suspense>
-                ),
-            },
-            {
                 path: 'e-commerce',
                 element: <ECommerceLayout />,
                 children: [
                     {
                         index: true,
-                        path: 'product'
+                        path: 'product',
+                        element: (
+                            <Suspense fallback={<div>Loading products...</div>}>
+                                <ProductPage />
+                            </Suspense>
+                        ),
                     },
                     {
-                        path: 'cart'
+                        path: 'cart',
+                        element: (
+                            <Suspense fallback={<div>Loading cart...</div>}>
+                                <CartPage />
+                            </Suspense>
+                        ),
                     }
                 ]
             }
