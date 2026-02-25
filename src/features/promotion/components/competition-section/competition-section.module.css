@@ -1,0 +1,21 @@
+.competitionBg {
+    padding: 146px 0;
+    background-image: url('src/features/promotion/assets/competition-section/competition-background.png');
+    background-size: cover;
+    background-position-y: 10%;
+    background-repeat: no-repeat;
+}
+
+.competitionBg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /*background: linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.06));*/
+    pointer-events: none;
+    z-index: 0;
+}
+
+.competitionBg > .container {
+    position: relative;
+    z-index: 1;
+}

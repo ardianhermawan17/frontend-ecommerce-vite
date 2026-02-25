@@ -6,7 +6,7 @@ export default function PromotionLayout() {
     return(
         <>
             <PromotionHeader/>
-            <div className="pt-16">
+            <div className="pt-14">
                 <Outlet />
             </div>
         </>

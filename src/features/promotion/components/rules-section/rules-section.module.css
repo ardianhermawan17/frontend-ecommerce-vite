@@ -1,0 +1,13 @@
+.rulesTitle {
+
+}
+
+.cardHeader {
+    cursor: pointer;
+}
+
+.ruleListStar li::marker {
+    content: '*';
+    color: inherit;
+    font-weight: bold;
+}

@@ -1,0 +1,45 @@
+/* card background */
+.sideQuestBg {
+    position: relative;
+    background-image: url('src/features/promotion/assets/(shared)/image/card-quest-background-image.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: visible; /* allow image to overflow */
+}
+
+/* overlay for better text contrast */
+.sideQuestBg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.03), rgba(255,255,255,0.02));
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* make card content above overlay */
+.sideQuestContent {
+    position: relative;
+    z-index: 1;
+}
+
+/* image container that allows image to overflow left */
+.sideQuestImageWrap {
+    position: relative;
+    overflow: visible;
+}
+
+/* image horizontal offset on desktop */
+.sideQuestImage {
+    position: relative;
+    left: 80px;
+    transform: translateZ(0);
+}
+
+/* mobile adjustments */
+@media (max-width: 767px) {
+    .sideQuestImage {
+        left: 0; /* on small screens keep image inside box */
+    }
+}

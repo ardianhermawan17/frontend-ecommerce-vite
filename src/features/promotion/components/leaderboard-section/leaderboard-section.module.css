@@ -1,0 +1,6 @@
+.cardBackground {
+    background-image: url('src/features/promotion/assets/leaderboard-section/card-background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
