@@ -9,7 +9,7 @@ interface Props {
     item: Cart
 }
 
-export default function CartItem({ item }: Props) {
+export function CartItem({ item }: Props) {
     const {
         onAdd,
         onRemove,

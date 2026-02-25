@@ -6,7 +6,7 @@ import type {Currency} from "@feature/e-commerce/(child)/cart/components/cart-su
 import { Separator } from "@shared/components/ui/separator"
 import {DialogCheckout, useDialogCheckout} from "@feature/e-commerce/(child)/cart/components/dialog-checkout";
 
-export default function CartSummary() {
+export function CartSummary() {
     const {
         currency,
         setCurrency,

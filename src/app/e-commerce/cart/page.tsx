@@ -1,5 +1,5 @@
-import CartList from "@feature/e-commerce/(child)/cart/components/cart-list/cart-list.tsx";
-import CartSummary from "@feature/e-commerce/(child)/cart/components/cart-summary/cart-summary.tsx";
+import {CartList} from "@feature/e-commerce/(child)/cart/components/cart-list/cart-list.tsx";
+import {CartSummary} from "@feature/e-commerce/(child)/cart/components/cart-summary/cart-summary.tsx";
 
 export default function Page() {
     return (

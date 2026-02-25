@@ -2,9 +2,9 @@ import { useCartList } from './use-cart-list'
 import { Button } from '@shared/components/ui/button'
 import { Link } from 'react-router'
 import {Fragment} from "react";
-import CartItem from "@feature/e-commerce/(child)/cart/components/cart-item/cart-item.tsx";
+import {CartItem} from "@feature/e-commerce/(child)/cart/components/cart-item/cart-item.tsx";
 
-export default function CartList() {
+export function CartList() {
     const { items, clearCart } = useCartList()
 
     return (

@@ -1,4 +1,4 @@
-export default function ProductItemLoading() {
+export function ProductItemLoading() {
     return (
         <div className="animate-pulse">
             <div className="rounded-md overflow-hidden bg-slate-700/40 h-40 w-full mb-3" />

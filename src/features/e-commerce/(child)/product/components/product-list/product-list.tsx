@@ -1,7 +1,7 @@
 import {useProductList} from "@feature/e-commerce/(child)/product/components/product-list/use-product-list.ts";
 import {ProductItem} from "@feature/e-commerce/(child)/product/components/product-item";
 import {CustomPagination} from "@shared/components/template/custom-pagination";
-import ProductItemLoading from "@feature/e-commerce/(child)/product/components/product-item/product-item-loading.tsx";
+import {ProductItemLoading} from "@feature/e-commerce/(child)/product/components/product-item/product-item-loading.tsx";
 
 export const ProductList = ({
     initialPage = 1,
