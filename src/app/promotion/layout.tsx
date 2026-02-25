@@ -1,11 +1,11 @@
 import {Outlet} from "react-router";
-import {ECommerceHeader} from "@feature/e-commerce/components/e-commerce-header";
+import {PromotionHeader} from "@feature/promotion/components/promotion-header";
 
 
-export default function ECommerceLayout() {
+export default function PromotionLayout() {
     return(
         <>
-            <ECommerceHeader/>
+            <PromotionHeader/>
             <div className="pt-16">
                 <Outlet />
             </div>

@@ -4,9 +4,11 @@ import {createBrowserRouter} from "react-router";
 import Index from '@app/index.tsx'
 import RootLayout from "@app/layout.tsx";
 import ECommerceLayout from "@app/e-commerce/layout.tsx";
+import PromotionLayout from "@app/promotion/layout.tsx";
 // Lazy pages
 const ProductPage = lazy(() => import('@app/e-commerce/product'));
 const CartPage = lazy(() => import('@app/e-commerce/cart'));
+const PromotionPage = lazy(() => import('@app/promotion/page'));
 
 
 const router = createBrowserRouter([
@@ -35,6 +37,15 @@ const router = createBrowserRouter([
                                 <CartPage />
                             </Suspense>
                         ),
+                    }
+                ]
+            },
+            {
+                element: <PromotionLayout/>,
+                children: [
+                    {
+                        path: 'promotion',
+                        element: <PromotionPage/>,
                     }
                 ]
             }
