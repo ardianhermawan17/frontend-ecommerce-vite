@@ -14,7 +14,23 @@ export function useProductList(pageSize = 12) {
 		parseInt(searchParams.get('page') || '1', 10),
 	);
 
-	const total = PRODUCTS.length;
+	// Get search query from URL query params
+	const searchQuery = searchParams.get('q') || '';
+
+	// Filter products based on search query
+	const filteredProducts = useMemo(() => {
+		if (!searchQuery.trim()) {
+			return PRODUCTS;
+		}
+		const query = searchQuery.toLowerCase();
+		return PRODUCTS.filter(
+			(product) =>
+				product.name.toLowerCase().includes(query) ||
+				product.description?.toLowerCase().includes(query),
+		);
+	}, [searchQuery]);
+
+	const total = filteredProducts.length;
 	const pageCount = Math.ceil(total / pageSize);
 
 	useEffect(() => {
@@ -22,12 +38,12 @@ export function useProductList(pageSize = 12) {
 		setLoading(true);
 		const t = setTimeout(() => {
 			const start = (currentPage - 1) * pageSize;
-			setData(PRODUCTS.slice(start, start + pageSize) as Product[]);
+			setData(filteredProducts.slice(start, start + pageSize) as Product[]);
 			setLoading(false);
 		}, 1000);
 
 		return () => clearTimeout(t);
-	}, [currentPage, pageSize]);
+	}, [currentPage, pageSize, filteredProducts]);
 
 	const paginatedProducts = useMemo(() => data, [data]);
 
